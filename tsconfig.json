@@ -1,0 +1,16 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "declaration": true,
+    "esModuleInterop": true,
+    "isolatedDeclarations": true,
+    "lib": ["ESNext"],
+    "module": "ESNext",
+    "noImplicitReturns": true,
+    "outDir": "dist",
+    "sourceMap": true,
+    "target": "ESNext",
+    "types": ["vitest/globals", "vitest/importMeta"]
+  },
+  "include": ["src", "test"]
+}
