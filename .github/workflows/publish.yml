@@ -1,9 +1,10 @@
-name: CI
-
+name: Publish to NPM
 on:
   push:
     branches:
-      - "**"
+      - master
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   build:
@@ -23,5 +24,14 @@ jobs:
         with:
           node-version: 20.x
           cache: "pnpm"
+
       - run: pnpm install --frozen-lockfile
-      - run: pnpm run test && pnpm run build
+
+      - name: Create PR or Publish
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          publish: pnpm run build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

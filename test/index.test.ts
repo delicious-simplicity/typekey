@@ -1,7 +1,7 @@
-import { createKeyDictionary } from '../src/index';
+import { KeyDictionary } from '../src/index';
 
 describe('createKeyDictionary', () => {
-  const keyDictionary = createKeyDictionary({
+  const keyDictionary = new KeyDictionary({
     alphabet: [
       'a',
       'b',
@@ -98,7 +98,7 @@ describe('createKeyDictionary', () => {
 
 describe('createKeyDictionary with maxKeyLength', () => {
   test.each([8, 16, 32, 64, 128, 256])('should truncate the key if it exceeds the maxKeyLength: %s', (maxKeyLength) => {
-    const keyDictionary = createKeyDictionary({ string: ['value'] as const }, { maxKeyLength });
+    const keyDictionary = new KeyDictionary({ string: ['value'] as const }, { maxKeyLength });
 
     const value = Array.from({ length: maxKeyLength }, (_, i) => i + 1).join('');
 
@@ -110,7 +110,7 @@ describe('createKeyDictionary with throwOnMaxLengthViolation', () => {
   test.each([8, 16, 32, 64, 128, 256])(
     'should throw an error if the key exceeds the maxKeyLength: %s',
     (maxKeyLength) => {
-      const keyDictionary = createKeyDictionary(
+      const keyDictionary = new KeyDictionary(
         { string: ['value'] as const },
         {
           maxKeyLength,
