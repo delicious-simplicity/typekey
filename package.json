@@ -27,6 +27,7 @@
   "license": "MIT",
   "main": "dist/index.js",
   "name": "@delicious-simplicity/typekey",
+  "private": false,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/delicious-simplicity/typekey.git"

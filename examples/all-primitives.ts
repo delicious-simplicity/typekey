@@ -1,4 +1,4 @@
-import { KeyDictionary, type KeyPrefixConfig } from 'typekey';
+import { KeyDictionary, type KeyPrefixConfig } from '@delicious-simplicity/typekey';
 
 const dict = {
   boolean: ['value'] as const,

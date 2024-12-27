@@ -1,4 +1,4 @@
-import { KeyDictionary, type KeyDictionaryOptions, type KeyPrefixConfig } from 'typekey';
+import { KeyDictionary, type KeyDictionaryOptions, type KeyPrefixConfig } from '@delicious-simplicity/typekey';
 
 const dict = {
   user: ['id'] as const,

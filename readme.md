@@ -19,12 +19,12 @@ A TypeScript library for generating consistent, type-safe cache keys from a stru
 import { KeyDictionary, type KeyPrefixConfig } from "typekey";
 
 const dict = {
-  user: ["id"] as const,
+  user: ["id"] as const, // must declare parameters `as const` for type safety
 } satisfies KeyPrefixConfig;
 
 const keyDictionary = new KeyDictionary(dict);
 
-keyDictionary.generateKey("user", { id: 1 });
+keyDictionary.generateKey("user", { id: 1 }); // `id` parameter has intellisense 🎉
 // => 'user:["1"]'
 ```
 
@@ -46,7 +46,7 @@ Generates cache keys based on a provided configuration of prefixes and parameter
 Generates a cache key for the specified prefix with itsz parameters.
 
 - `prefix` (required): The prefix to use for the generated key. Must be one of the keys from the `config` object passed to the constructor.
-- `params` (required): An object containing the parameter values for the specified prefix. The parameter names must match those defined in the `config` object for the given prefix.
+- `params` (required): An object containing the parameter values for the specified prefix. The parameter names must match those defined in the `config` object for the given prefix. Parameters must be declared `as const` in order to preserve type safety.
 
 Returns: The generated cache key as a string.
 
