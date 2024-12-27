@@ -22,8 +22,17 @@
       "types": "./dist/index.d.ts"
     }
   },
-  "files": ["dist/"],
-  "keywords": ["cache", "cache-key", "cache-key-dictionary", "cache-key-generator", "cache-key-registry", "caching"],
+  "files": [
+    "dist/"
+  ],
+  "keywords": [
+    "cache",
+    "cache-key",
+    "cache-key-dictionary",
+    "cache-key-generator",
+    "cache-key-registry",
+    "caching"
+  ],
   "license": "MIT",
   "main": "dist/index.js",
   "name": "typekey",
@@ -40,5 +49,5 @@
   },
   "type": "module",
   "types": "dist/index.d.ts",
-  "version": "0.0.0"
+  "version": "1.0.0"
 }

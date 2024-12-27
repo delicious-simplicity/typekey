@@ -1,5 +1,0 @@
----
-"typekey": major
----
-
-Initial release
