@@ -1,6 +1,6 @@
-import type { KnipConfig } from 'knip';
+import type { KnipConfig, WorkspaceProjectConfig } from 'knip';
 
-const nextjsConfig: KnipConfig['next'] = {
+const nextjsConfig: NonNullable<WorkspaceProjectConfig['next']> = {
   entry: [
     '{instrumentation,middleware}.{js,ts}',
     'app/{manifest,sitemap,robots}.{js,ts}',
@@ -23,46 +23,11 @@ const nextjsConfig: KnipConfig['next'] = {
   ],
 };
 
-const commonFilesIgnore = ['src/image/loader.js', 'src/components/ui/**'];
-const commonDepsIgnore = [''];
 
 const config: KnipConfig = {
-  workspaces: {
-    'apps/api': {
-      ignore: [...commonFilesIgnore],
-      ignoreDependencies: [...commonDepsIgnore],
-      includeEntryExports: true,
-      next: nextjsConfig,
-    },
-    'apps/auth': {
-      ignore: [...commonFilesIgnore],
-      ignoreDependencies: [...commonDepsIgnore],
-      includeEntryExports: true,
-      next: nextjsConfig,
-    },
-    'apps/play': {
-      ignore: [...commonFilesIgnore],
-      ignoreDependencies: [...commonDepsIgnore],
-      includeEntryExports: true,
-      next: nextjsConfig,
-    },
-    'apps/www': {
-      ignore: [...commonFilesIgnore],
-      ignoreDependencies: [...commonDepsIgnore],
-      includeEntryExports: true,
-      next: nextjsConfig,
-    },
-    'packages/api': {
-      ignore: ['src/server/generated/**', 'scripts/**', 'contentful/codegen.ts'],
-      includeEntryExports: true,
-    },
-    'contentful-apps/user-mgmt': { includeEntryExports: true },
-    'packages/db': { includeEntryExports: true },
-    'packages/ui': {
-      ignore: ['turbo/**', 'dist/**'],
-      includeEntryExports: true,
-    },
-  },
+  next: nextjsConfig,
+  ignore: ['dist/**', 'node_modules/**', 'pnpm-lock.yaml','examples/**'],
 };
 
 export default config;
+

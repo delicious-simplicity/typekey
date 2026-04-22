@@ -6,15 +6,14 @@
   ],
   "description": "TypeScript library for generating cache keys with type safety",
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
-    "@changesets/cli": "^2.27.11",
-    "@types/node": "^20.14.11",
-    "globals": "^15.8.0",
-    "knip": "^5.33.3",
-    "typescript": "~5.7.2",
-    "vite": "^6.0.6",
-    "vite-plugin-dts": "^4.4.0",
-    "vitest": "^2.0.3"
+    "@biomejs/biome": "^2.4.12",
+    "@changesets/cli": "^2.31.0",
+    "@types/node": "^25.6.0",
+    "knip": "^6.6.1",
+    "typescript": "~6.0.3",
+    "vite": "^8.0.9",
+    "vite-plugin-dts": "^4.5.4",
+    "vitest": "^4.1.5"
   },
   "exports": {
     ".": {
@@ -22,11 +21,21 @@
       "types": "./dist/index.d.ts"
     }
   },
-  "files": ["dist/"],
-  "keywords": ["cache", "cache-key", "cache-key-dictionary", "cache-key-generator", "cache-key-registry", "caching"],
+  "files": [
+    "dist/"
+  ],
+  "keywords": [
+    "cache",
+    "cache-key",
+    "cache-key-dictionary",
+    "cache-key-generator",
+    "cache-key-registry",
+    "caching"
+  ],
   "license": "MIT",
   "main": "dist/index.js",
   "name": "@delicious-simplicity/typekey",
+  "packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319",
   "private": false,
   "repository": {
     "type": "git",
